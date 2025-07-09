@@ -1,0 +1,765 @@
+@import url(variables.css);
+
+/* ===== BASE STYLES (compatível com normalize.css) ===== */
+body {
+    margin: 0;
+    padding-top: 86px; /* Compensa a navbar fixa */
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: #EFF0F3;
+}
+
+/* ===== NAVBAR ===== */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EFF0F3;
+    box-shadow: 4px 6px 13px 0px #D7D7D740;
+    backdrop-filter: blur(10px);
+    padding: 0px 70px;
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Adicionado para transições suaves */
+}
+
+/* Logo */
+.nav-logo img {
+    width: 194px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Adicionado para hover effects */
+}
+.nav-logo:hover img {
+    transform: scale(1.05); /* Efeito sutil ao passar o mouse */
+}
+
+/* Container principal dos links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 44px;
+}
+
+/* Links de navegação */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 25px;
+}
+
+.links ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links li {
+    font-weight: 700;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 100%;
+    color: var(--black);
+}
+
+.links li:hover {
+    color: var(--blue);
+}
+.links li a { /* Adicionado estilo para links */
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--black);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Campo de pesquisa */
+.search {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.search:focus-within { /* Efeito quando o input está em foco */
+    background: #fff;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(98, 70, 234, 0.2);
+}
+
+.search img {
+    width: 17px;
+    height: 17px;
+    transition: opacity 0.3s ease;
+}
+.search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    margin-left: 10px;
+    width: 100px;
+    transition: width 0.3s ease;
+}
+.search input:focus {
+    width: 150px; /* Expande ao focar */
+}
+
+.search button {
+    display: none; /* Escondemos o botão de submit */
+}
+
+/* Botão "Buy Me a Coffee" */
+.coffee {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    background-color: var(--blue);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    will-change: transform; /* Otimização para animação */
+}
+
+.coffee:hover {
+    background: #4a36b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.coffee img {
+    width: 24px;
+    height: 24px;
+}
+
+.coffee:active {
+    transform: translateY(0);
+}
+
+.coffee p {
+    margin: 0;
+}
+
+.coffee a {
+    color: white !important; /* Alterado para melhor contraste */
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+
+/* ------------- SECTION ------------- */ 
+/* Transição suave para todas as seções */
+section {
+    scroll-margin-top: 86px; /* Compensa a navbar fixa */
+    transition: all 0.3s ease-out;
+    margin: 0;
+    padding: 20px 0; /* Ajuste conforme seu layout */
+}
+
+/* Efeito ao chegar na seção via scroll (opcional) */
+section:target {
+    animation: highlight 1.5s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: transparent; }
+    20% { background-color: rgba(98, 70, 234, 0.1); }
+    100% { background-color: transparent; }
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: calc(100vh - 86px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 70px;
+    /*padding: 0 clamp(20px, 5vw, 70px); /* Responsivo: 20px-70px */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Previne vazamento de elementos */
+
+    /* Container máximo centralizado */
+    max-width: 1440px; /* Ou 1224px para match com section-two */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*gap: 40px; ALTEREI PARA RESPONSIVIDADE*/
+    gap: clamp(20px, 4vw, 40px); /* Gap responsivo */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima de possíveis pseudo-elementos */
+
+    /* Previne quebra prematura */
+    flex-wrap: nowrap; 
+}
+
+.left-hero-content {
+    max-width: min(600px, 50%); /* Limita largura máxima */
+    /*max-width: 600px;*/
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaçamento de 30px entre todos os filhos diretos */
+}
+
+.left-hero-content h1 {
+    margin: 0; /* Remove todas as margens */
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 100%;
+    color: var(--black);
+}
+
+.left-hero-content p {
+    margin: 0; /* Remove todas as margens */
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 100%;
+    color: var(--dark-grey);
+}
+
+.left-hero-content > * {
+    margin: 0; /* Garante que nenhum filho tenha margens */
+}
+
+/* Container para o input e botão */
+.left-hero-content .subscribe-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.left-hero-content input {
+    padding: 12px 15px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 0; /* Remove margens */
+}
+
+.left-hero-content button {
+    padding: 12px 25px;
+    background-color: #6246EA;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0; /* Remove margens */
+}
+
+.left-hero-content button:hover {
+    background: #4a36b5;
+}
+
+/* Container para o input e botão - Revisado */
+.subscribe-container {
+    display: flex;
+     flex-wrap: wrap; /* Permite quebra em mobile */
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+}
+
+.subscribe-container input {
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 200px; /* Mínimo para legibilidade */
+
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.subscribe-container input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(98, 70, 234, 0.2);
+    outline: none;
+}
+
+.subscribe-container button {
+    padding: 12px 25px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    will-change: transform;
+}
+
+.subscribe-container button:hover {
+    background: #4a36b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-container button:active {
+    transform: translateY(0);
+}
+
+/* ----------------- Right hero content ------------------------ */
+
+.right-hero-content {
+    width: min(470px, 45%); /* Largura máxima + responsiva */
+    height: auto; /* Altura flexível */
+    aspect-ratio: 470/387; /* Mantém proporção original */
+    border-radius: 10px;
+    position: relative;
+    
+    /*width: 470px;
+    height: 387px;
+    position: relative;
+    border-radius: 10px;*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    overflow: hidden;
+}
+
+
+
+.right-hero-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.hero > div:last-child {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero > div:last-child button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== SCROLL BUTTON REVISADO ===== */
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    pointer-events: auto; /* Garante que seja clicável em todos os dispositivos */
+    
+}
+
+.scroll-down-btn { /* Adicione esta classe ao seu button no HTML */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+
+    outline: 2px solid transparent; /* Para focus visible */
+    outline-offset: 3px;
+}
+
+/* Círculo animado */
+.scroll-down-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+
+    /* Otimização de performance */
+    will-change: transform, opacity;
+}
+
+/* Círculo menor interno */
+.scroll-down-btn::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+    transform: translateY(5px);
+}
+
+.scroll-down-btn:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.scroll-down-btn:hover::after {
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+.scroll-down-btn img {
+    /*width: 24px;
+    height: 24px;*/
+    width: clamp(18px, 4vw, 24px); /* Ícone responsivo */
+    height: clamp(18px, 4vw, 24px);
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.scroll-down-btn:hover img {
+    transform: translateY(3px);
+}
+
+/* Estado focus para acessibilidade */
+.scroll-down-btn:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+}
+
+/* ===== RESPONSIVIDADE ADICIONAL ===== */
+@media (max-width: 768px) {
+    .scroll-down {
+        bottom: 15px; /* Mais próximo da borda em mobile */
+    }
+    
+    .scroll-down-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .scroll-down-btn img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.scroll-down-btn {
+    animation: pulse 2s infinite ease-in-out; /* Remove se não quiser animação automática */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+     .left-hero-content {
+        max-width: 100%; /* Ocupa largura total */
+        align-items: center;
+    }
+    
+    .right-hero-content {
+        width: 80%; /* Mais espaço para a imagem */
+        max-width: 470px; /* Limite máximo */
+    }
+
+    .links {
+        display: none; /* Esconde os links de navegação em telas menores */ 
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .links {
+        gap: 20px;
+    }
+    
+    .links ul {
+        gap: 15px;
+    }
+    
+    .left-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .left-hero-content input {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .subscribe-container {
+        flex-direction: column;
+    }
+    
+    .subscribe-container input,
+    .subscribe-container button {
+        width: 100%;
+    }
+}
+
+
+/* ===== SECTION HEADER GERAL ===== */
+
+
+.section-header {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Permite que o conteúdo se ajuste em telas menores */
+}
+
+.left-header, .right-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre logo e título */
+}
+
+.after-header{
+    width: 35px;
+    border: 2px solid #2B2C34;
+}
+
+.right-header img {
+    width: 6px;
+    height: 14px;
+    border-width: 0.3px;
+    color: #2B2C34;
+
+}
+
+/* ===== BROWSE CATEGORY SECTION ===== */
+
+.section-two {
+    width: 100%;
+    padding: 55px 20px;
+    box-sizing: border-box;
+}
+
+.section-header h2 {
+    color: var(--black);
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.section-header a {
+    color: var(--black);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.cards-grid {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.category-card {
+    width: 100%;
+    min-width: 220px;
+    height: 280px;
+    background-color: #D7D7D7;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0 auto; /* Centraliza se ficar isolado */
+}
+
+.category-card:hover {
+    background-color: #6246EA;
+}
+
+
+/* Container do conteúdo do card */
+.content-card {
+    /* Posicionamento absoluto em relação ao .category-card */
+    position: absolute;
+    
+    /* Move o topo do elemento para 50% da altura do pai */
+    top: 50%;
+    
+    /* Move a esquerda do elemento para 50% da largura do pai */
+    left: 50%;
+    
+    /* Corrige o posicionamento centralizando perfeitamente:
+       -50% no eixo X e Y move o elemento de volta metade 
+       do seu próprio tamanho */
+    transform: translate(-50%, -50%);
+    
+    /* Largura adaptável: 100% do pai menos 40px (20px de cada lado) 
+       para manter margens internas */
+    width: calc(100% - 40px);
+    
+    /* Alinhamento central do texto e elementos inline */
+    text-align: center;
+}
+
+/* Container do logo/círculo */
+.content-logo {
+    /* Dimensões fixas para o círculo */
+    width: 60px;
+    height: 60px;
+    
+    /* Margem: 0 no topo, automática nas laterais (centraliza),
+       20px na base (espaçamento para o texto abaixo) */
+    margin: 0 auto 20px;
+    
+    /* Transforma em flex container para alinhar a imagem */
+    display: flex;
+    
+    /* Alinha verticalmente ao centro */
+    align-items: center;
+    
+    /* Alinha horizontalmente ao centro */
+    justify-content: center;
+    
+    /* Cor de fundo branca com 20% de transparência */
+    background: rgba(255,255,255,0.2);
+    
+    /* Bordas totalmente arredondadas (forma circular) */
+    border-radius: 50%;
+    
+    /* Animação suave de 0.3s para todas as propriedades alteráveis */
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover - quando o mouse está sobre o card pai */
+.category-card:hover .content-logo {
+    /* Muda o fundo para branco sólido ao passar o mouse */
+    background: white;
+    
+    /* A transição definida acima fará essa mudança de cor ser suave */
+}
+
+.content-logo:hover {
+    background: white; /* Muda a cor de fundo ao passar o mouse */
+    transition: background 0.3s ease; /* Transição suave */
+}
+
+.content-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Mantém proporção da imagem */
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.category-card img {
+    width: 60px;
+    height: 60px;
+}
+
+.category-card h1 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+}
+
+/* Tablet (481px - 1023px) */
+@media (min-width: 481px) and (max-width: 1023px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop pequeno (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop médio (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .cards-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Desktop grande (1440px+) */
+@media (min-width: 1440px) {
+    .cards-grid {
+        grid-template-columns: repeat(5, 220px);
+    }
+}
+
+/* --------------------- Section 3 ---------------------- */
+

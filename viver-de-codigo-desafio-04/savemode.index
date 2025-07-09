@@ -1,0 +1,37 @@
+<setcion class="section-three" id="articles"> 
+        <div class="section-three-container">
+            <div class="section-header">
+                <h2>Featured Article</h2>
+                <a href="index.html" class="see-all">See All Article <span>></span></a>
+            </div>
+            
+            <div class="content">
+                
+                <div class="article-card">
+                    <!--<img src="assets/images/image01.png" alt="article image" style="width: 260px; height: 198px; border-radius: 12.6px; object-fit: cover;">
+                    
+                    <div class="article-card-content">
+                        <h2>Fundamental of javascript</h2>
+                        <div class="autor">
+                            <div class="autor">
+                                <img src="assets/images/author05.png" alt="author image">
+                            </div>
+                            <div class="autor-info">
+                                <h3>Dasteen</h3>
+                                <small>Jan 10, 2022     ∙     3 min read</small>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="article-card">
+                    
+                </div>
+                <div class="article-card">
+
+                </div>
+                <div class="article-card">
+
+                </div>
+            </div>
+        </div>
+    </section>

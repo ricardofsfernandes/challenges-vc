@@ -1,0 +1,184 @@
+/*FIRST ARTICLE*/
+
+.firstArticle {
+  position: absolute;
+  top: 1711px;
+  left: 120px;
+  width: 712px;
+  height: 402px;
+  background: linear-gradient(to bottom, #CCFBF1, #BBDCE9, #99F6E4);
+  border-radius: 28px;
+  z-index: 1;
+}
+
+.firstArticle .firstType {
+  position: absolute;
+  top: 32px;
+  left: 44px;
+  width: 129px;
+  height: 49px;
+  background-color: #F9FAFB;
+  border-radius: 29px;
+}
+
+.firstArticle .titleFreelance {
+  position: absolute;
+  top: 45px;
+  left: 76px;
+  color: #0F766E;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 24px;
+}
+
+.firstArticle .titleMain {
+  position: absolute;
+  top: 268px;
+  left: 44px;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  line-height: 30px;
+}
+
+.firstArticle .descriptionContainer{
+  position: absolute;
+  top: 316px;
+  left: 44px;
+  width: 364px;
+  height: 48px;
+}
+
+.firstArticle .description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 24px;
+  color: #111827;
+}
+
+.firstArticle .image1 {
+  position: absolute;
+  top: -14px;
+  left: 314px;
+  width: 161px;
+  height: 240px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.firstArticle .image2 {
+  position: absolute;
+  width: 161px;
+  height: 240px;
+  top: 170px;
+  left: 487px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+/*SECOND ARTICLE*/
+
+.sectionArticles .secondArticle {
+  width: 456px;
+  height: 402px;
+  /*position: absolute; /*acrescentei a cima position absolut e radius para todos*/
+  top: 1711px;
+  left: 864px;
+  background-image: linear-gradient(135deg, #FFEDD5, #FED7AA);
+}
+
+.firstArticle .secondType {
+  position: absolute;
+  top: 32px;
+  left: 44px;
+  width: 140px;
+  height: 49px;
+  background-color: #F9FAFB;
+  border-radius: 29px;
+}
+
+.secondArticle .secondType {
+  position: absolute;
+  top: 45px;
+  left: 76px;
+  color: #FB923C;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 24px;
+}
+
+.secondArticle .secondTitle {
+  position: absolute;
+  top: 45px;
+  left: 76px;
+  color: #0F766E;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 24px;
+}
+
+.secondArticle .titleMain {
+  position: absolute;
+  top: 268px;
+  left: 44px;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  line-height: 30px;
+}
+
+.secondArticle .descriptionContainer{
+  position: absolute;
+  top: 316px;
+  left: 44px;
+  width: 366px;
+  height: 48px;
+}
+
+.secondArticle .description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 24px;
+  color: #111827;
+}
+
+.secondArticle .litleCircle{
+  border-radius: 50%;
+  background-color: #F9FAFB;
+  width: 77px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondArticle .bigCircle{
+  border-radius: 50%;
+  background-color: #F9FAFB;
+  width: 133px;
+  height: 133px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 95px;
+  left: 170px;
+}
+
+.secondArticle .litleCircle.first{
+  position: absolute;
+  top: 146px;
+  left: 90px;
+}
+.secondArticle .litleCircle.second{
+  position: absolute;
+  top: 146px;
+  left: 306px;
+}

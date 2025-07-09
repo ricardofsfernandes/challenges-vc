@@ -1,0 +1,24 @@
+
+/*ATT fazer @import para o css*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+/*COR*/
+:root {
+  
+  --white: #FFFFFE;
+  --light-grey-1: #EFF0F3;
+  --light-grey-2: #E4E5E9;  
+  --grey: #C0C0C0;
+  --dark-grey: #9A9494;     
+  --black: #2B2C34;         
+  --blue: #6246EA;
+  
+  /* Você pode renomear essas variáveis conforme o propósito de cada cor no seu projeto */
+}
+
+:root {
+  /* Tipografia - Família (ajuste conforme a fonte usada no projeto) */
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}

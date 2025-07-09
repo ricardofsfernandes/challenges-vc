@@ -1,0 +1,84 @@
+.sectionArticles .firstArticle {
+    position: absolute;
+    top: 1711px;
+    left: 120px;
+    width: 712px;
+    height: 402px;
+    background: linear-gradient(to bottom, #CCFBF1, #BBDCE9, #99F6E4);
+    border-radius: 28px;
+    overflow: hidden; /* se necessário */
+    z-index: 1;
+  }
+  
+  /* Badge */
+  .firstArticle .firstType {
+    position: absolute;
+    top: 1743px;
+    left: 164px;
+    width: 129px;
+    height: 49px;
+    background-color: #F9FAFB;
+    border-radius: 29px;
+  }
+  
+  /* Título pequeno (tipo da matéria) */
+  .firstArticle .titleFreelance {
+    position: absolute;
+    top: 1756px;
+    left: 196px;
+    font-size: 14px;
+    
+    color: #0F766E;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1,4rem;
+    line-height: 24px;
+    letter-spacing: 0%;
+  }
+  
+  /* Título principal */
+  .firstArticle .titleMain {
+    position: absolute;
+    top: 1979px;
+    left: 164px;
+    color: #111827;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    line-height: 30px;
+    letter-spacing: 0%;
+  }
+  
+  /* Parágrafo */
+  .firstArticle .description {
+    position: absolute;
+    top: 2027px;
+    left: 164px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 24px;
+    letter-spacing: 0%;
+  }
+  
+  /* Imagens decorativas dentro do artigo */
+  .firstArticle .image1 {
+    position: absolute;
+    top: 1711px;
+    left: 434px;
+    width: 161px;
+    height: 240px;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    box-shadow: -4px -4px 13px 0px #00000008;
+  }
+  .firstArticle .image2 {
+    position: absolute;
+    width: 161px;
+    height: 240px;
+    top: 1873px;
+    left: 607px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: -4px -4px 13px 0px #00000008;
+  }

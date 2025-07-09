@@ -1,0 +1,144 @@
+@import url(variables.css);
+
+body{
+    background-color: var(--color-soft);
+}
+.layout {
+    background-color: var(--color-medium);
+    color: var(--color-white);
+    margin: 20px auto;
+    max-width: 60%;
+    min-width: 300px; /*minimo de largura*/
+    padding: 10px;
+    border-radius: 15px;
+    line-height: 1.5;
+}
+
+h2{
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 10px; /* Espaço entre título e conteúdo */
+}
+
+
+/* Botão Hover*/
+.button{
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    margin: 4px 2px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    color: rgba(255, 254, 254, 0.568);
+    padding: 20px 35px;
+}
+
+.buttons{
+    background-color: var(--color-soft); 
+    color: var(--color-black);
+}
+
+.buttons:hover{
+    background-color: var(--color-high);
+    color: var(--color-white);
+}
+
+/* Texto com Animação*/
+.typing-text {
+    overflow: hidden; /* Esconde o texto q ainda n "apareceu" */
+    white-space: nowrap; /* Impede que o texto quebre para a próxima line */
+    animation: 
+      typing 3.7s steps(40, end); /* 3.7s de duração */
+    font-size: var(--font-size-small);
+  }
+
+/* animação d digitar */
+@keyframes typing {
+    from { width: 0 } /* Começa com largura 0 */
+    to { width: 100% } /* Termina com largura total texto completo */
+  }
+  
+  .typing-text::after {
+    content: "";
+    border-right: 2px solid var(--color-white);
+    animation: blink-cursor 0.75s step-end infinite;
+    animation-delay: 1s; /* Só inicia depois da digitação */
+    margin-left: 2px;
+  }
+
+  /* Animação after difitar */
+@keyframes blink-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: var(--color-high); }
+  }
+
+
+  /* Loader CSS */
+.loaderCircle {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--color-white);
+    border-top: 5px solid var(--color-high); /* Cor do spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Animação infinita */
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Flip Card CSS */
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorcer */
+    display: block; /* Remove espaços extras */
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%; /*Flip card responsivo usando unidades relativas (% ou vw):*/
+    max-width: 300px;
+    height: 200px;
+    perspective: 1000px; /*3D effect */
+    margin: 0 auto; /* Centraliza */
+  }
+  
+  /* container para posicionar a parte da frente e parte de trás */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Horizontal Flip */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Style parte de trás */
+  .flip-card-back {
+    background-color: var(--color-high);
+    color: var(--color-white);
+    transform: rotateY(180deg);
+
+    font-size: var(--font-size-large);
+  }
