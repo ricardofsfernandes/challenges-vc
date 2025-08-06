@@ -11,46 +11,37 @@
 
 </head>
 <body>
-    <div class="clock" id="relogio">00:00:00</div>
-  <button class="toggle-btn" id="toggleFormato">Alternar para 12h</button>
+  <div class="container">
+    <div id="data">-- de ----- de ----</div>
+    <div id="hora">--:--:--</div>
+  </div>
 
   <script>
-    let formato24h = localStorage.getItem('formato24h') === 'false' ? false : true;
-
-    const relogio = document.getElementById('relogio');
-    const toggleBtn = document.getElementById('toggleFormato');
-
-    function formatar(num) {
-      return num < 10 ? '0' + num : num;
-    }
-
     function atualizarRelogio() {
-      const agora = new Date();
-      let horas = agora.getHours();
-      const minutos = formatar(agora.getMinutes());
-      const segundos = formatar(agora.getSeconds());
-      let sufixo = '';
+  const agora = new Date();
 
-      if (!formato24h) {
-        sufixo = horas >= 12 ? ' PM' : ' AM';
-        horas = horas % 12 || 12; // transforma 0 em 12
-      }
+  // Hora
+  const hora = agora.getHours().toString().padStart(2, '0');
+  const minutos = agora.getMinutes().toString().padStart(2, '0');
+  const segundos = agora.getSeconds().toString().padStart(2, '0');
+  document.getElementById('hora').textContent = `${hora}:${minutos}:${segundos}`;
 
-      relogio.textContent = `${formatar(horas)}:${minutos}:${segundos}${sufixo}`;
-    }
+  // Data
+  const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira',
+                      'Quinta-feira', 'Sexta-feira', 'Sábado'];
+  const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+                 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
-    // Evento do botão para alternar o formato
-    toggleBtn.addEventListener('click', () => {
-      formato24h = !formato24h;
-      localStorage.setItem('formato24h', formato24h);
-      toggleBtn.textContent = formato24h ? 'Alternar para 12h' : 'Alternar para 24h';
-      atualizarRelogio();
-    });
+  const diaSemana = diasSemana[agora.getDay()];
+  const dia = agora.getDate().toString().padStart(2, '0');
+  const mes = meses[agora.getMonth()];
+  const ano = agora.getFullYear();
 
-    // Iniciar com base na preferência guardada
-    toggleBtn.textContent = formato24h ? 'Alternar para 12h' : 'Alternar para 24h';
-    atualizarRelogio();
-    setInterval(atualizarRelogio, 1000);
+  document.getElementById('data').textContent = `${diaSemana}, ${dia} de ${mes} de ${ano}`;
+}
+
+setInterval(atualizarRelogio, 1000);
+atualizarRelogio(); // chamada inicial
   </script>
 </body>
 </html>

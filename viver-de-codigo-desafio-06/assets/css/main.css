@@ -8,61 +8,30 @@
     }
 
     body {
-      margin: 0;
-      background: linear-gradient(to right, #000428, #004e92);
-      font-family: 'Courier New', monospace;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  margin: 0;
+  background: #0d1117;
+  color: #58a6ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    .clock {
-      font-size: 4rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px 60px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      margin-bottom: 30px;
-      transition: transform 0.3s ease;
-    }
+.container {
+  text-align: center;
+  border: 3px solid #58a6ff;
+  padding: 2rem 4rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #58a6ff;
+}
 
-    .clock:hover {
-      transform: scale(1.05);
-    }
+#data {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 
-    .toggle-btn {
-      padding: 10px 20px;
-      font-size: 1rem;
-      background-color: #ffffff22;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      color: #fff;
-      transition: background 0.3s;
-    }
-
-    .toggle-btn:hover {
-      background-color: #ffffff44;
-    }
-
-    @media (max-width: 768px) {
-      .clock {
-        font-size: 3rem;
-        padding: 30px 40px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .clock {
-        font-size: 2rem;
-        padding: 20px 30px;
-      }
-
-      .toggle-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-      }
-    }
+#hora {
+  font-size: 4rem;
+  font-weight: bold;
+}
