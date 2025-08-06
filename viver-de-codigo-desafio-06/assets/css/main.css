@@ -1,0 +1,46 @@
+@import url(variables.css);
+
+/* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .clock {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      font-size: 10rem;
+      letter-spacing: 3px;
+      transition: transform 0.3s ease;
+    }
+
+    .clock:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .clock {
+        font-size: 3rem;
+        padding: 30px 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .clock {
+        font-size: 2rem;
+        padding: 20px 30px;
+      }
+    }

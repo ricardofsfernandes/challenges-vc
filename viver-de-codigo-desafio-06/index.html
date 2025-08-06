@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 06</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/icon/relogio.ico">
+
+</head>
+<body>
+    <div class="clock" id="relogio">00:00:00</div>
+
+  <script>
+    // Função que formata números com 2 dígitos
+    function formatar(num) {
+      return num < 10 ? '0' + num : num;
+    }
+
+    // Função que actualiza o relógio
+    function atualizarRelogio() {
+      const agora = new Date();
+      const horas = formatar(agora.getHours());
+      const minutos = formatar(agora.getMinutes());
+      const segundos = formatar(agora.getSeconds());
+
+      const relogio = document.getElementById('relogio');
+      relogio.textContent = `${horas}:${minutos}:${segundos}`;
+    }
+
+    // Atualiza de imediato e depois a cada 1000ms
+    atualizarRelogio();
+    setInterval(atualizarRelogio, 1000);
+  </script>
+</body>
+</html>
